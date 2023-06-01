@@ -1,9 +1,24 @@
 import React from 'react';
 import EmpleadoAvatar from './EmpleadoAvatar';
-const EmpleadoRow = () => {
+import ListGroup from 'react-bootstrap/ListGroup';
+
+const EmpleadoRow = ({empleado}) => {
     return (
-        <div className='d-flex'>
-        <EmpleadoAvatar></EmpleadoAvatar>
+        <div >
+        <ListGroup.Item className='d-flex'>
+        <div>
+        <EmpleadoAvatar empleado={empleado}></EmpleadoAvatar>
+        </div>
+        <div className='d-flex mx-5'>
+        <p>{empleado.fullName}</p>
+        <p>{empleado.id}</p>
+        </div>
+        <div className='d-flex flex-column'>
+        <p>{empleado.title}</p>
+        <p>{empleado.department}</p>
+        </div>
+        </ListGroup.Item>
+        
         
         </div>
     );

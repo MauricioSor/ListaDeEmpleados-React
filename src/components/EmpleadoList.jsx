@@ -1,12 +1,18 @@
 import React from 'react';
 import ListGroup from 'react-bootstrap/ListGroup';
+import EmpleadoRow from './EmpleadoRow';
 
-const EmpleadoList = () => {
+const EmpleadoList = ({empleado}) => {
+    
     return (
-        <section className='d-flex flex-column'>
+        <section className='d-flex justify-content-center my-3'>
             <ListGroup>
-            <EmpleadoRow></EmpleadoRow>
-            <ListGroup.Item>Cras justo odio</ListGroup.Item>
+            <hr />    
+            {
+            empleado.map((empleado)=>(
+            <EmpleadoRow empleado={empleado} key={empleado.id}></EmpleadoRow>
+            ))
+            }
             </ListGroup>
         </section>
     );
